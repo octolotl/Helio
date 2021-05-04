@@ -1,9 +1,9 @@
 # Helio
-Bot I made for a friend's server  
+Bot I made for a friend's Discord server  
 
 Prefix = o!  
 
-It is used for setting a server's status and a custom rules and info command.  
+It is used for setting a Minecraftserver's status manually and a custom rules and info command.  
 To use the server status do these commands:  
 
 Add your Discord id to the owners in the json file  
