@@ -200,17 +200,18 @@ async def ping(ctx, boool):
 
 @bot.command(pass_context=True, aliases=['dm'])
 async def delmessage(ctx):
-    with open('config.json', 'r') as tee:
-        js = json.load(tee)
+    if isowner(ctx.author.id):
+        with open('config.json', 'r') as tee:
+            js = json.load(tee)
 
-    channel = ctx.guild.get_channel(js['mchannel'])
-    mesg = await channel.fetch_message(js['message'])
-    await mesg.delete()
+        channel = ctx.guild.get_channel(js['mchannel'])
+        mesg = await channel.fetch_message(js['message'])
+        await mesg.delete()
 
-    del js['message']
+        del js['message']
 
-    with open('config.json', 'w') as tee:
-        json.dump(js, tee)
+        with open('config.json', 'w') as tee:
+            json.dump(js, tee)
 
 
 @bot.command(pass_context=True, aliases=['sr'])
